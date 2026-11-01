@@ -21,7 +21,7 @@
 | Skill | 用途 | 状态 |
 |---|---|---|
 | [usability-synthesis](skills/usability-synthesis) | 把可用性测试记录整理成分析报告：观察提取 → 亲和图分组 → 严重度 × 频率分级 → 带验收标准的迭代建议 | ✅ 可用 |
-| user-story-backlog | 把需求整理成用户故事、验收标准、优先级和里程碑 | 🚧 开发中 |
+| [user-story-backlog](skills/user-story-backlog) | 把需求整理成产品待办列表：用户故事 → Given/When/Then 验收标准 → 价值 × 工作量排优先级 → 依赖与里程碑 → 待确认问题 | ✅ 可用 |
 | ai-prd | 生成 AI 产品 PRD，包含评测指标、幻觉对策和人工确认节点 | 🚧 开发中 |
 
 ## 设计原则
@@ -38,18 +38,22 @@
 
 ```bash
 git clone https://github.com/isabellae1/ai-pm-skills.git
-cp -r ai-pm-skills/skills/usability-synthesis ~/.claude/skills/
+cp -r ai-pm-skills/skills/* ~/.claude/skills/
 ```
 
 ### Claude.ai
 
-把 `skills/usability-synthesis` 文件夹压缩成 zip，在 Claude.ai 设置中的 Skills 区域上传。
+把需要的 skill 文件夹（如 `skills/usability-synthesis`）压缩成 zip，在 Claude.ai 设置中的 Skills 区域上传。
 
 ## 使用示例
 
 安装后直接用自然语言提问即可，例如：
 
 > 这是我们 6 个用户的可用性测试记录，帮我整理一下，看看哪些问题最该先改。
+
+> 把这份测试报告里 P0 和 P1 的问题整理成产品待办列表，排好优先级和里程碑。
+
+每个 skill 的 `examples/` 文件夹里都有完整的输入和输出示例。两个 skill 的示例使用同一个虚构产品「邻里健康」，可以连起来看：[测试记录](skills/usability-synthesis/examples/input-test-notes.md) → [分析报告](skills/usability-synthesis/examples/output-report.md) → [产品待办列表](skills/user-story-backlog/examples/output-backlog.md)。
 
 ## License
 
